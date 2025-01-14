@@ -1,4 +1,3 @@
-from machine import Pin, UART
 from bluetooth import BLE
 
 # BLE Service and Characteristic UUIDs
@@ -12,23 +11,6 @@ ble.active(True)
 # UART for debugging
 uart = UART(1, baudrate=115200, tx=17, rx=16)
 uart.write("BLE Server Starting\n")
-
-# Define BLE callbacks
-def on_write(handle, data):
-    global ble
-    uart.write(f"Data received: {data.decode()}\n")
-    if data.decode() == "ACTIVATE_MOTOR":
-        activate_motor()
-        # Send acknowledgment
-        ble.gatt_server_write(handle, b"Motor Activated")
-
-# Function to activate the motor
-def activate_motor():
-    uart.write("Motor Activated!\n")
-    motor_pin = Pin(2, Pin.OUT)
-    motor_pin.on()
-    time.sleep(1)
-    motor_pin.off()
 
 # Advertise BLE Service
 def advertise():
