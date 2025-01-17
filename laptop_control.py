@@ -2,8 +2,8 @@ import asyncio
 from bleak import BleakClient, BleakScanner
 
 # UUIDs for BLE communication
-SERVICE_UUID = "12345678-1234-5678-1234-56789abcdef0"  # Replace with ESP32 BLE service UUID
-CHARACTERISTIC_UUID = "abcdef01-1234-5678-1234-56789abcdef0"  # Replace with characteristic UUID
+SERVICE_UUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b"  # Replace with ESP32 BLE service UUID
+CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8"  # Replace with characteristic UUID
 
 # Motor control command
 MOTOR_COMMAND = "ACTIVATE_MOTOR"
