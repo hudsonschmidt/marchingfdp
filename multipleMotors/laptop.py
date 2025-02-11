@@ -16,8 +16,7 @@ MOTOR_FOUR = 4
 
 # Board numbers and respective BLE addresses
 BLE_ADDRESSES = {
-    "ONE": "0B95303D-D096-EA9E-48E0-75059113EA47",
-    "TWO": "F06E54A8-4E0E-D456-1D3E-BD2FC4CA4B41"
+    "ONE": "0B95303D-D096-EA9E-48E0-75059113EA47"
 }
 
 # Characteristic ID
@@ -89,6 +88,7 @@ async def main():
         return
     asyncio.create_task(monitor())
     
+    print("Enter command: (q to quit)")
     while True:
         pin_choice = get_char().strip()
         print(f"You entered: {pin_choice}")
@@ -118,6 +118,8 @@ async def main():
             await send("TWO", MOTOR_FOUR, 1)
             await asyncio.sleep(0.5)
             await send("TWO", MOTOR_FOUR, 0)
+        elif pin_choice == "q":
+            break
         else:
             print("Invalid pin selection.")
 
