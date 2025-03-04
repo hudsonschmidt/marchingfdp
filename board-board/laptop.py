@@ -1,5 +1,4 @@
 import socket
-import asyncio
 import sys
 import termios
 import tty
