@@ -16,7 +16,9 @@ MOTOR_FOUR = 4
 
 # Board numbers and respective BLE addresses
 BLE_ADDRESSES = {
-    "ONE": "0B95303D-D096-EA9E-48E0-75059113EA47"
+    "ONE": "0B95303D-D096-EA9E-48E0-75059113EA47",
+    "TWO": "F06E54A8-4E0E-D456-1D3E-BD2FC4CA4B41",
+    "THREE": "6BA09D3D-3AE0-9AC2-64DB-109ACF01FC21"
 }
 
 # Characteristic ID
@@ -118,6 +120,16 @@ async def main():
             await send("TWO", MOTOR_FOUR, 1)
             await asyncio.sleep(0.5)
             await send("TWO", MOTOR_FOUR, 0)
+        # BOARD 3 ---------------------------------
+        elif pin_choice == "z":
+            await send("THREE", MOTOR_ONE, 1)
+            await asyncio.sleep(0.5)
+            await send("THREE", MOTOR_ONE, 0)
+        elif pin_choice == "c":
+            await send("THREE", MOTOR_TWO, 1)
+            await asyncio.sleep(0.5)
+            await send("THREE", MOTOR_TWO, 0)
+        # BREAK -----------------------------------
         elif pin_choice == "q":
             break
         else:

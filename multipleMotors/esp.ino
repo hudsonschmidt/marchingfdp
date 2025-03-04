@@ -42,7 +42,7 @@ class MotorCallbacks : public BLECharacteristicCallbacks {
       std::string cmd = value.substr(separator + 1);
       
       int pin = atoi(pinStr.c_str());
-      if (pin != MOTOR_PIN_5 && pin != MOTOR_PIN_19) {
+      if (pin != MOTOR_PIN_5 && pin != MOTOR_PIN_19 && pin != MOTOR_PIN_21 && pin != MOTOR_PIN_4) {
         Serial.println("Invalid motor pin.");
         return;
       }
