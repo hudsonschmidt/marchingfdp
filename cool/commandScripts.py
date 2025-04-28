@@ -10,9 +10,20 @@ def send_command(command):
     return response
 
 for i in range(5):
-    print("Turning LED ON")
+    print("Turning buzz1 ON")
     send_command('1')
     time.sleep(.5)
-    print("Turning LED OFF")
-    send_command('0')
+    print("Turning buzz1 OFF")
+    send_command('2')
     time.sleep(.05)
+    print("Turning buzz2 ON")
+    send_command('3')
+    print("Turning buzz1 ON")
+    send_command('1')
+    time.sleep(.05)
+    print("Turning buzz2 OFF")
+    send_command('4')
+    print("Turning buzz1 OFF")
+    send_command('2')
+    time.sleep(.05)
+    
