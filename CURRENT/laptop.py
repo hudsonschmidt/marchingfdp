@@ -69,11 +69,27 @@ if __name__ == "__main__":
             time.sleep(0.3) 
             send_message("2;5:0")
 
-        # Row 0 only (Hub) ----------------------------
+        # Row 1 all motors ----------------------------
         elif pin_choice == "q":
-            send_message("0;5:1")
-            time.sleep(0.3)
-            send_message("0;5:0")
+            send_message("1;5:1")
+            send_message("1;18:1")
+            send_message("1;19:1")
+            send_message("1;21:1")
+            time.sleep(0.1)
+            send_message("1;5:0")
+            send_message("1;18:0")
+            send_message("1;19:0")
+            send_message("1;21:0")
+            time.sleep(0.05)
+            send_message("1;5:1")
+            send_message("1;18:1")
+            send_message("1;19:1")
+            send_message("1;21:1")
+            time.sleep(0.1)
+            send_message("1;5:0")
+            send_message("1;18:0")
+            send_message("1;19:0")
+            send_message("1;21:0")
 
         # Row 1 only ----------------------------
         elif pin_choice == "w":

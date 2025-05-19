@@ -7,6 +7,7 @@ const int MOTOR_PIN_21 = 21;
 const int MOTOR_PIN_4 = 4;
 
 const String ROW_NUM = "1";
+const String COL_NUM = "1";
 
 // Updated callback function with the new signature
 void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
@@ -84,7 +85,7 @@ void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *data, int l
 void setup() {
   // Initialize Serial Monitor for debugging
   Serial.begin(115200);
-  Serial.println("ESP32 ESP‑NOW Receiver Starting...");
+  Serial.println("Client loading...");
 
   // Set the motor pins as outputs
   pinMode(MOTOR_PIN_5, OUTPUT);
